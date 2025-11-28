@@ -272,6 +272,20 @@ VALUES
 - Purchased Gifts Display (react component)
 - Backend APIs for all game operations
 
+## Deployment
+  The project is fully deployed online:
+- **Frontend (Live Website):**  
+  https://frontend-lake-phi-98.vercel.app  
+  This is the main playable version of STEAM Quest where users can sign up, log in, answer questions, track progress, purchase gifts, and view the leaderboard.
+
+- **Backend (API Server):**  
+  https://backend-production-aaba.up.railway.app  
+
+- **Source Code Repositories:**  
+  - Frontend GitHub Repository: https://github.com/AssilHalawi/frontend 
+  - Backend GitHub Repository: https://github.com/AssilHalawi/backend  
+
+Both the frontend and backend are fully online, connected to the hosted MySQL database, and support all game features
 
 ## Resources Used
 - Node: executes js backend code outside the browser
@@ -283,7 +297,7 @@ VALUES
 - nodemon: automatically restarts the backend server whenever the code changes
   npx nodemon server.js => run backend
 
-CDNs and frontend libraries
+  CDNs and frontend libraries
 - Bootstrap CSS & JS: for quick, responsive styling and prebuilt UI components
   `https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/`
 - FontAwesome: provides clean, ready-to-use icons (stars, trophies, hearts, menus)
