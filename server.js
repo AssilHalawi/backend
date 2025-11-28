@@ -17,6 +17,11 @@ db.query(`
     if (err) console.error("Failed to ensure user_gifts table:", err);
 });
 
+// ✅ ROOT ROUTE FOR TESTING DEPLOYMENT
+app.get("/", (req, res) => {
+    res.send("Backend is running!");
+});
+
 // ROUTES
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/users", require("./routes/users"));
