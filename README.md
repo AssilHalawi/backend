@@ -152,7 +152,7 @@ Purchased Gifts
 
 
 ## Database Schema
-NOTE: i added pictures of each table of the database with the data inside it, they have been pasted in a link format inside the img tag, so copy the image and paste it on the browser to see the image of the table
+NOTE: i added pictures of each table of the database with the data inside it
 
 CREATE DATABASE steamquest;
 - `users`
@@ -168,6 +168,7 @@ CREATE DATABASE steamquest;
     password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );
+  
   -<img width="750" height="126" alt="image" src="https://github.com/user-attachments/assets/a8d0a9a7-1147-4aa5-b3ff-f7d725521516" />
 
 
@@ -190,6 +191,7 @@ CREATE DATABASE steamquest;
   ('engineering', '⚙️', 'Win her heart with clever builds 🏗️.', 'category-engineering'),
   ('arts', '🎨', 'Paint her a masterpiece to win her heart 💖.', 'category-arts'),
   ('math', '➗', 'Unlock secrets with the power of logic 🔐.', 'category-math');
+
 -<img width="759" height="159" alt="image" src="https://github.com/user-attachments/assets/b788cd98-5744-49b0-b994-ec46d0bdb8ce" />
 
 
@@ -218,6 +220,7 @@ CREATE DATABASE steamquest;
   INSERT INTO questions (category_id, title, optionA, optionB, optionC, optionD, answer, hint, img)
 VALUES
   (1, 'Which process allows plants to make their own food?', 'Photosynthesis', 'Respiration', 'Fermentation', 'Transpiration', 'A', 'It uses sunlight to convert CO₂ and water into sugar.', NULL), ...
+
 -<img width="1360" height="267" alt="image" src="https://github.com/user-attachments/assets/a72f550e-e521-4899-9033-c0a789c5f3ed" />
 
 
@@ -237,7 +240,8 @@ VALUES
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
   );
--<img width="483" height="226" alt="image" src="https://github.com/user-attachments/assets/819534d6-7a8f-4fde-a991-5185a7501861" />
+
+  -<img width="483" height="226" alt="image" src="https://github.com/user-attachments/assets/819534d6-7a8f-4fde-a991-5185a7501861" />
 
 
 - `user_totals`
@@ -252,7 +256,8 @@ VALUES
     total_completed INT DEFAULT 0,
     FOREIGN KEY (user_id) REFERENCES users(id)
   );
--<img width="307" height="147" alt="image" src="https://github.com/user-attachments/assets/eb098267-7eed-494e-93bf-815eb6b01838" />
+
+  -<img width="307" height="147" alt="image" src="https://github.com/user-attachments/assets/eb098267-7eed-494e-93bf-815eb6b01838" />
 
 
 - `user_gifts`
@@ -266,7 +271,8 @@ VALUES
     giftname TEXT NOT NULL
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
   );
--<img width="443" height="238" alt="image" src="https://github.com/user-attachments/assets/5f56985a-f334-41af-83b4-2eeef16f000e" />
+
+  -<img width="443" height="238" alt="image" src="https://github.com/user-attachments/assets/5f56985a-f334-41af-83b4-2eeef16f000e" />
 
 
 ## Summary of added features
