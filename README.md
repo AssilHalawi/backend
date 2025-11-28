@@ -65,6 +65,7 @@ Stack
   - I added the leaderboard page in Project 2 because this version finally has real users, real XP, and a backend that saves everyone’s progress. Since the data now comes from the database, I can show how all players rank. Project 1 didn’t have any of this, so a leaderboard wasn’t possible yet.
   - Loads `/api/leaderboard`, sorts by `total_xp`, shows top rows, and puts the current user in bold and displays user rank and total XP.
 
+
 ## Back-End Documentation
 The backend follows a routes → controllers → models pattern and uses Express + MySQL
 Key backend files
@@ -94,7 +95,6 @@ Key backend files
     - userGiftsModel.js: insert purchase rows into `user_gifts` table
     - giftDisplayModel.js: read user's purchased gifts and used to display them in progress.html
     - leaderboardModel.js: returns users joined to their totals sorted by XP
-
 
 
 ## API Endpoints
@@ -152,8 +152,9 @@ Purchased Gifts
 
 
 ## Database Schema
-CREATE DATABASE steamquest;
+NOTE: i added pictures of each table of the database with the data inside it, they have been pasted in a link format inside the img tag, so copy the image and paste it on the browser to see the image of the table
 
+CREATE DATABASE steamquest;
 - `users`
   - `id`
   - `email`
@@ -167,6 +168,8 @@ CREATE DATABASE steamquest;
     password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );
+  -<img width="750" height="126" alt="image" src="https://github.com/user-attachments/assets/a8d0a9a7-1147-4aa5-b3ff-f7d725521516" />
+
 
 - `categories`
   - `id`
@@ -187,6 +190,8 @@ CREATE DATABASE steamquest;
   ('engineering', '⚙️', 'Win her heart with clever builds 🏗️.', 'category-engineering'),
   ('arts', '🎨', 'Paint her a masterpiece to win her heart 💖.', 'category-arts'),
   ('math', '➗', 'Unlock secrets with the power of logic 🔐.', 'category-math');
+-<img width="759" height="159" alt="image" src="https://github.com/user-attachments/assets/b788cd98-5744-49b0-b994-ec46d0bdb8ce" />
+
 
 - `questions`
   - `id`
@@ -213,6 +218,8 @@ CREATE DATABASE steamquest;
   INSERT INTO questions (category_id, title, optionA, optionB, optionC, optionD, answer, hint, img)
 VALUES
   (1, 'Which process allows plants to make their own food?', 'Photosynthesis', 'Respiration', 'Fermentation', 'Transpiration', 'A', 'It uses sunlight to convert CO₂ and water into sugar.', NULL), ...
+-<img width="1360" height="267" alt="image" src="https://github.com/user-attachments/assets/a72f550e-e521-4899-9033-c0a789c5f3ed" />
+
 
 - `progress`
   - `id`
@@ -230,6 +237,8 @@ VALUES
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
   );
+-<img width="483" height="226" alt="image" src="https://github.com/user-attachments/assets/819534d6-7a8f-4fde-a991-5185a7501861" />
+
 
 - `user_totals`
   - `user_id`
@@ -243,6 +252,7 @@ VALUES
     total_completed INT DEFAULT 0,
     FOREIGN KEY (user_id) REFERENCES users(id)
   );
+-<img width="307" height="147" alt="image" src="https://github.com/user-attachments/assets/eb098267-7eed-494e-93bf-815eb6b01838" />
 
 
 - `user_gifts`
@@ -256,9 +266,7 @@ VALUES
     giftname TEXT NOT NULL
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
   );
-
-- once i created them all i tested the ones i already inserted data to to see if they work correctly: http://localhost:5000/api/categories
-- created a test user in MySQL, and checked if the users' progress shows using the url: http://localhost:5000/api/progress/1
+-<img width="443" height="238" alt="image" src="https://github.com/user-attachments/assets/5f56985a-f334-41af-83b4-2eeef16f000e" />
 
 
 ## Summary of added features
@@ -272,6 +280,7 @@ VALUES
 - Purchased Gifts Display (react component)
 - Backend APIs for all game operations
 
+
 ## Deployment
   The project is fully deployed online:
 - **Frontend (Live Website):**  
@@ -281,11 +290,12 @@ VALUES
 - **Backend (API Server):**  
   https://backend-production-aaba.up.railway.app  
 
-- **Source Code Repositories:**  
+- **Source Code Repositories in Github:**  
   - Frontend GitHub Repository: https://github.com/AssilHalawi/frontend 
   - Backend GitHub Repository: https://github.com/AssilHalawi/backend  
 
 Both the frontend and backend are fully online, connected to the hosted MySQL database, and support all game features
+
 
 ## Resources Used
 - Node: executes js backend code outside the browser
